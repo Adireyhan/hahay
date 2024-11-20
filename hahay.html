@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perjanjian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .perjanjian {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Form Perjanjian</h1>
+<label for="nama">Masukkan nama audiens:</label>
+<input type="text" id="nama" placeholder="Nama Audiens">
+<button onclick="tampilkanPerjanjian()">Buat Perjanjian</button>
+
+<div class="perjanjian" id="hasilPerjanjian" style="display: none;"></div>
+
+<script>
+    function tampilkanPerjanjian() {
+        var nama = document.getElementById("nama").value;
+        var hasil = `
+            <h2>Selamat, ${nama}!</h2>
+            <p>Anda telah setuju untuk:</p>
+            <ol>
+                <li>Mematuhi semua ketentuan yang berlaku.</li>
+                <li>Menjaga kerahasiaan informasi yang diperoleh.</li>
+                <li>Bekerja sama demi tercapainya tujuan bersama.</li>
+            </ol>
+            <p>Terima kasih atas komitmen Anda. Semoga kita dapat bekerja sama dengan baik!</p>
+        `;
+        document.getElementById("hasilPerjanjian").innerHTML = hasil;
+        document.getElementById("hasilPerjanjian").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
